@@ -35,26 +35,28 @@ summary::-webkit-details-marker {
 
 .filter-sort {
    height: 132px;
+   padding-top: 39px;
+   box-sizing: border-box;
    position: relative;
    display: flex;
    gap: $gapGrid;
 }
 .filter {
-   padding: 13px 16px 16px;
+   padding-top: 13px;
    width: 360px;
    box-sizing: border-box;
    position: relative;
-   z-index: 10;
+   z-index: 1;
 
    &__content {
-      top: 39px;
-   }
-   &[open] {
-      background-color: $textColorHover;
+      background-color: #fff;
+      padding: 0px 16px 16px 16px;
       box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
    }
+
    &[open] .filter__heading {
       color: $mainColor;
+      box-shadow: none;
    }
    &[open] path {
       fill: $mainColor;
@@ -63,6 +65,8 @@ summary::-webkit-details-marker {
       display: flex;
       align-items: center;
       gap: 11px;
+      padding-left: 16px;
+      z-index: 5;
    }
    &__heading {
       font-style: normal;
@@ -108,8 +112,50 @@ summary::-webkit-details-marker {
 }
 
 .sort {
+   padding-top: 12px;
    display: flex;
-   position: absolute;
-   left: 420px;
-   top: 51px;
+   gap: 18px;
+   z-index: 1;
+
+   &__details {
+      position: relative;
+   }
+
+   &__summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   &__check {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      color: #6f6e6e;
+
+      //font-family: "Roboto";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: $font-400;
+      line-height: 16px;
+   }
+
+   &__heading {
+      font-style: normal;
+      font-weight: $font-400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #6f6e6e;
+   }
+   &__box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #fff;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+      padding: 7px 30px 11px 9px;
+      left: -9px;
+      top: 22px;
+      position: absolute;
+   }
 }
